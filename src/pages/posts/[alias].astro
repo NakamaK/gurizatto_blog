@@ -2,7 +2,7 @@
 import { spearlyApiClient } from "../../lib/spearly"; 
 
 export async function getStaticPaths() {
-    const contents = await spearlyApiClient.getList("blog")
+    const contents = await spearlyApiClient.getList("sample-post")
     const pages = contents.data.map((content => {
         const title = content.attributes.fields.data.find(f => f.attributes.identifier === "title")
         const description = content.attributes.fields.data.find(f => f.attributes.identifier === "description")
